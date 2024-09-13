@@ -1,0 +1,143 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  background: linear-gradient(135deg, #6772e5, #32325d, #24b47e);
+  position: relative;
+  overflow: hidden;
+}
+
+.home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 15%),
+    radial-gradient(circle at 90% 80%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 15%);
+  z-index: 1;
+}
+
+.home > * {
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.subscriptionPlans {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+.planWrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Makes each plan take an equal width */
+    margin-bottom: 2rem;
+    min-width: 300px; /* Ensures minimum size on smaller screens */
+    max-width: 350px; /* Ensures maximum size for larger screens */
+}
+
+.plan {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is spread out evenly */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.15), 0 15px 35px rgba(50, 50, 93, 0.2), 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.planContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes content evenly */
+}
+
+.planName {
+  font-size: 1.5rem;
+  color: #32325d;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.planPrice {
+  font-size: 2.5rem;
+  color: #6772e5;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.featureList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1;
+}
+
+.featureItem {
+  margin-bottom: 0.75rem;
+  color: #525f7f;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem; /* Add some padding to align with other content */
+  position: relative;
+}
+
+.featureItem::before {
+  content: '✓';
+  color: #6772e5;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.subscribeButton {
+  display: block;
+  width: 100%;
+  margin: 0; /* Negative margin to counteract plan padding */
+  padding: 0.75rem;
+  background-color: #6772e5;
+  color: white;
+  border: none;
+  border-radius: 0 0 8px 8px; /* Round bottom corners to match plan */
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.subscribeButton:hover {
+  background-color: #5469d4;
+}
+
